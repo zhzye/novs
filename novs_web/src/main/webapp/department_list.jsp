@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,27 +35,21 @@
             <!--列表-->
             <table cellpadding="0" cellspacing="0" class="list_hy">
                 <tr>
-                    <th class="xz" scope="col">选择</th>
-                    <th scope="col"><div>XX<a href="" class="up">&nbsp;</a><a href="" class="down">&nbsp;</a></div></th>
-                    <th class="zt" scope="col"><div>XX<a href="" class="up">&nbsp;</a><a href="" class="down">&nbsp;</a></div></th>
                     <th scope="col">名称</th>
                     <th scope="col">地址</th>
                     <th scope="col">操作</th>
                 </tr>
+                <c:forEach items="${LIST}" var="dep">
                 <tr>
-                    <td class="xz"><input name="" type="checkbox" value=""></td>
-                    <td>XXXX</td>
-                    <td class="zt">XXXX</td>
-                    <td>XXXX</td>
-                    <td>XXXXXXXX</td>
-                    <td>XXXX</td>
-                    <td>XXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    <td>${dep.name}</td>
+                    <td>${dep.address}</td>
                     <td>
                         <a href="add.html" class="btn">编辑</a>
                         <a href="" class="btn">删除</a>
                         <a href="detail.html" class="btn">查看</a>
                     </td>
                 </tr>
+                </c:forEach>
             </table>
             <!--列表-->
             <!--右边底部-->
