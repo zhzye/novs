@@ -17,4 +17,13 @@
         <filter-name>Encoding</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!--core servlet-->
+    <servlet>
+        <servlet-name>Global</servlet-name>
+        <servlet-class>com.zhzye.novs.controller.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Global</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 </web-app>
