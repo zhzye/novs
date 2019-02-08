@@ -55,7 +55,7 @@
                         <li class="clearfix">
                             <span class="title">部门：</span>
                             <div class="li_r">
-                                <select name="deparmentId">
+                                <select name="departmentId">
                                     <c:forEach items="${DLIST}" var="dep">
                                         <c:if test="${OBJ.departmentId == dep.id}">
                                             <option value="${dep.id}" selected="selected">${dep.name}</option>
@@ -89,8 +89,7 @@
                                 <input name="status" type="radio" value="禁用">
                                 <i>禁用</i>
                             </div>
-                            </c:if>>
-
+                            </c:if>
                         </li>
                         <li class="clearfix">
                             <span class="title">认证姓名：</span>

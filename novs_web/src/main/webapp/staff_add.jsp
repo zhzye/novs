@@ -53,7 +53,7 @@
                         <li class="clearfix">
                             <span class="title">部门：</span>
                             <div class="li_r">
-                                <select name="deparmentId">
+                                <select name="departmentId">
                                     <c:forEach items="${DLIST}" var="dep">
                                         <option value="${dep.id}">${dep.name}</option>
                                     </c:forEach>

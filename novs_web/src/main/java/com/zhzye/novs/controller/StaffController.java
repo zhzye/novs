@@ -40,6 +40,8 @@ public class StaffController {
         String account = httpServletRequest.getParameter("account");
         String password = httpServletRequest.getParameter("password");
         String name = httpServletRequest.getParameter("name");
+        String status = httpServletRequest.getParameter("status");
+        Long departmentId = Long.parseLong(httpServletRequest.getParameter("departmentId"));
         Date bornDate = null;
         try {
             bornDate = new SimpleDateFormat("yyyy-MM-dd").parse(httpServletRequest.getParameter("bornDate"));
@@ -56,8 +58,8 @@ public class StaffController {
         staff.setPassword(password);
         staff.setName(name);
         staff.setBornDate(bornDate);
-        staff.setStatus("正常");
-        staff.setDepartmentId(3L);
+        staff.setStatus(status);
+        staff.setDepartmentId(departmentId);
         staffService.add(staff);
         httpServletResponse.sendRedirect("list.do");
     }
@@ -75,6 +77,8 @@ public class StaffController {
         String account = httpServletRequest.getParameter("account");
         String password = httpServletRequest.getParameter("password");
         String name = httpServletRequest.getParameter("name");
+        String status = httpServletRequest.getParameter("status");
+        Long departmentId = Long.parseLong(httpServletRequest.getParameter("departmentId"));
         Date bornDate = null;
         try {
             bornDate = new SimpleDateFormat("yyyy-MM-dd").parse(httpServletRequest.getParameter("bornDate"));
@@ -93,6 +97,8 @@ public class StaffController {
         staff.setPassword(password);
         staff.setName(name);
         staff.setBornDate(bornDate);
+        staff.setStatus(status);
+        staff.setDepartmentId(departmentId);
 
         staffService.edit(staff);
 
