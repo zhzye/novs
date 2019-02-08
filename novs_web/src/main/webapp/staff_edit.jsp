@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -52,9 +53,56 @@
                             </div>
                         </li>
                         <li class="clearfix">
+                            <span class="title">部门：</span>
+                            <div class="li_r">
+                                <select name="deparmentId">
+                                    <c:forEach items="${DLIST}" var="dep">
+                                        <c:if test="${OBJ.departmentId == dep.id}">
+                                            <option value="${dep.id}" selected="selected">${dep.name}</option>
+                                        </c:if>
+                                        <c:if test="${OBJ.departmentId != dep.id}">
+                                            <option value="${dep.id}">${dep.name}</option>
+                                        </c:if>
+                                    </c:forEach>
+                                </select>
+                                <i>*</i>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">状态：</span>
+                            <div class="li_r">
+                                <span class="radio"/>
+                                <input name="status" type="radio" value="可用" checked="checked">
+                                <i>可用</i>
+                            </div>
+                            <c:if test="${OBJ.status == '禁用'}">
+                                <div class="li_r">
+                                    <span class="radio"/>
+                                    <input name="status" type="radio" value="禁用" checked="checked">
+                                    <i>禁用</i>
+                                </div>
+                            </c:if>
+                            <c:if test="${OBJ.status != '禁用'}">
+                            <div class="li_r">
+                                <span class="radio"/>
+                                <input name="status" type="radio" value="禁用">
+                                <i>禁用</i>
+                            </div>
+                            </c:if>>
+
+                        </li>
+                        <li class="clearfix">
                             <span class="title">认证姓名：</span>
                             <div class="li_r">
                                 <input class="chang" name="name" type="text" value="${OBJ.name}">
+                                <i>*</i>
+                            </div>
+                        </li>>
+                        <li>
+                            <span class="title">生日：</span>
+                            <div class="li_r">
+                                <input class="chang" name="bornDate" type="text" value="<fmt:formatDate value="${OBJ.bornDate}" pattern="yyyy-MM-dd"/>">
                                 <i>*</i>
                             </div>
                         </li>

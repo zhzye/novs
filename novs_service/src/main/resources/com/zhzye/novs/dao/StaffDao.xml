@@ -6,18 +6,19 @@
         <result property="account" column="account" javaType="String"/>
         <result property="password" column="password" javaType="String"/>
         <result property="status" column="status" javaType="String"/>
+        <result property="bornDate" column="born_date" javaType="Date"/>
         <result property="departmentId" column="department_id" javaType="Long"/>
         <result property="name" column="name" javaType="String"/>
         <association property="department" column="department_id" javaType="Department" select="com.zhzye.novs.dao.DepartmentDao.selectById"/>
     </resultMap>
     <insert id="insert" parameterType="Staff" useGeneratedKeys="true">
-      insert into staffs(account, password, status, department_id, `name`) values(#{account}, #{password}, #{status}, #{departmentId}, #{name})
+      insert into staffs(account, password, status, department_id, `name`, born_date) values(#{account}, #{password}, #{status}, #{departmentId}, #{name}, #{bornDate})
     </insert>
     <delete id="delete" parameterType="Long">
         delete from staffs where id = #{id}
     </delete>
     <update id="update" parameterType="Staff">
-        update staffs set name=#{name}, account=#{account}, password=#{password}, status=#{status}, department_id=#{departmentId} where id=#{id}
+        update staffs set name=#{name}, account=#{account}, password=#{password}, status=#{status}, department_id=#{departmentId}, born_date=#{bornDate} where id=#{id}
     </update>
     <select id="selectById" parameterType="Long" resultMap="resultMap">
         select * from staffs where id = #{id}

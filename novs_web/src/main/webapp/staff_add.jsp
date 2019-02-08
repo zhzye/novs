@@ -51,9 +51,42 @@
                             </div>
                         </li>
                         <li class="clearfix">
+                            <span class="title">部门：</span>
+                            <div class="li_r">
+                                <select name="deparmentId">
+                                    <c:forEach items="${DLIST}" var="dep">
+                                        <option value="${dep.id}">${dep.name}</option>
+                                    </c:forEach>
+                                </select>
+                                <i>*</i>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">状态：</span>
+                            <div class="li_r">
+                                <span class="radio"/>
+                                <input name="status" type="radio" value="可用" checked="checked">
+                                <i>可用</i>
+                            </div>
+                            <div class="li_r">
+                                <span class="radio"/>
+                                <input name="status" type="radio" value="禁用">
+                                <i>禁用</i>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
                             <span class="title">认证姓名：</span>
                             <div class="li_r">
                                 <input class="chang" name="name" type="text">
+                                <i>*</i>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <span class="title">生日：</span>
+                            <div class="li_r">
+                                <input class="chang" name="bornDate" type="text">
                                 <i>*</i>
                             </div>
                         </li>

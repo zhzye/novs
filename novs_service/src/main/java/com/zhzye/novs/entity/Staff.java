@@ -1,13 +1,24 @@
 package com.zhzye.novs.entity;
 
+import java.util.Date;
+
 public class Staff {
     private Long id;
     private String account;
     private String password;
     private String status;
+    private Date bornDate;
     private Long departmentId;
     private String name;
     private Department department;
+
+    public Date getBornDate() {
+        return bornDate;
+    }
+
+    public void setBornDate(Date bornDate) {
+        this.bornDate = bornDate;
+    }
 
     public Department getDepartment() {
         return department;
