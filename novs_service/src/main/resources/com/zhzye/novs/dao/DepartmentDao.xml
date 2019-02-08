@@ -13,10 +13,10 @@
         delete from departments where id = #{id}
     </delete>
     <update id="update" parameterType="Department">
-        update deparments set name=#{name}, address=#{address} where id=#{id}
+        update departments set name=#{name}, address=#{address} where id=#{id}
     </update>
     <select id="selectById" parameterType="Long" resultMap="resultMap">
-        select * from departments where id #{id}
+        select * from departments where id = #{id}
     </select>
     <select id="selectAll" resultMap="resultMap">
         select * from departments
