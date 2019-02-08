@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhzye.novs.dao.StaffDao">
+    <resultMap id="resultMap" type="Staff">
+        <id property="id" column="id" javaType="Long"/>
+        <result property="account" column="account" javaType="String"/>
+        <result property="password" column="password" javaType="String"/>
+        <result property="status" column="status" javaType="String"/>
+        <result property="departmentId" column="department_id" javaType="Long"/>
+        <result property="name" column="name" javaType="String"/>
+        <association property="department" column="department_id" javaType="Department" select="com.zhzye.novs.dao.DepartmentDao.selectById"/>
+    </resultMap>
+    <insert id="insert" parameterType="Staff" useGeneratedKeys="true">
+      insert into staffs(account, password, status, department_id, `name`) values(#{account}, #{password}, #{status}, #{departmentId}, #{name})
+    </insert>
+    <delete id="delete" parameterType="Long">
+        delete from staffs where id = #{id}
+    </delete>
+    <update id="update" parameterType="Staff">
+        update staffs set name=#{name}, account=#{account}, password=#{password}, status=#{status}, department_id=#{departmentId} where id=#{id}
+    </update>
+    <select id="selectById" parameterType="Long" resultMap="resultMap">
+        select * from staffs where id = #{id}
+    </select>
+    <select id="selectAll" resultMap="resultMap">
+        select * from staffs
+    </select>
+</mapper>
