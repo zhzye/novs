@@ -1,4 +1,4 @@
-package com.zhzye.novs.controller;
+package com.zhzye.novs.global;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
