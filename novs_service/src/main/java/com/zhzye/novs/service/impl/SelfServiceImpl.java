@@ -1,16 +1,16 @@
 package com.zhzye.novs.service.impl;
 
-import com.zhzye.novs.dao.ShelfDao;
+import com.zhzye.novs.dao.SelfDao;
 import com.zhzye.novs.dao.StaffDao;
 import com.zhzye.novs.entity.Staff;
-import com.zhzye.novs.service.ShelfService;
+import com.zhzye.novs.service.SelfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("shelfService")
-public class ShelfServiceImpl implements ShelfService {
+public class SelfServiceImpl implements SelfService {
     @Autowired
-    private ShelfDao shelfDao;
+    private SelfDao shelfDao;
 
     @Autowired
     private StaffDao staffDao;

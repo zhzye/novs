@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zhzye.novs.dao.ShelfDao">
-    <select id="selectById" parameterType="String" resultMap="com.zhzye.novs.dao.StaffDao.resultMap">
+<mapper namespace="com.zhzye.novs.dao.SelfDao">
+    <select id="selectByAccount" parameterType="String" resultMap="com.zhzye.novs.dao.StaffDao.resultMap">
         select * from staffs where account = #{account}
     </select>
 </mapper>

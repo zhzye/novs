@@ -1,7 +1,7 @@
 package com.zhzye.novs.controller;
 
 import com.zhzye.novs.entity.Staff;
-import com.zhzye.novs.service.ShelfService;
+import com.zhzye.novs.service.SelfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 @Controller("selfController")
 public class SelfController {
     @Autowired
-    private ShelfService shelfService;
+    private SelfService shelfService;
 
     public void toLogin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         httpServletRequest.getRequestDispatcher("login.jsp").forward(httpServletRequest, httpServletResponse);
