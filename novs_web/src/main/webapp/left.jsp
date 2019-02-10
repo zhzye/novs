@@ -30,7 +30,7 @@
 <body>
 <div id="left_ctn">
     <ul class="sidenav">
-        <li class="now">
+        <li>
             <div class="nav_m">
                 <span><a>人员管理</a></span>
                 <i>&nbsp;</i>
@@ -46,39 +46,41 @@
         </li>
         <li>
             <div class="nav_m">
-                <span><a>用户权限</a></span>
+                <span><a>日志信息</a></span>
                 <i>&nbsp;</i>
             </div>
             <ul class="erji">
                 <li>
-                    <span><a href="#" target="main">角色设置</a></span>
+                    <span><a href="log/operationLog.do" target="main">操作日志</a></span>
                 </li>
                 <li>
-                    <span><a href="#" target="main">功能权限</a></span>
+                    <span><a href="log/loginLog.do" target="main">登陆日志</a></span>
+                </li>
+                <li>
+                    <span><a href="log/systemLog.do" target="main">系统日志</a></span>
                 </li>
             </ul>
         </li>
-        <li>
+        <li class="now">
             <div class="nav_m">
                 <span><a>个人中心</a></span>
                 <i>&nbsp;</i>
             </div>
             <ul class="erji">
                 <li>
-                    <span><a href="#" target="main">个人信息</a></span>
+                    <span><a href="self/info.do" target="main">个人信息</a></span>
                 </li>
                 <li>
-                    <span><a href="#" target="main">修改密码</a></span>
+                    <span><a href="self/toChangePassword.do" target="main">修改密码</a></span>
                 </li>
             </ul>
         </li>
         <li>
             <div class="nav_m">
-                <span><a href="login.html" target="_top">退出系统</a></span>
+                <span><a href="logout.do" target="_top">退出系统</a></span>
             </div>
         </li>
     </ul>
 </div>
 </body>
 </html>
-
